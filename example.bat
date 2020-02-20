@@ -1,0 +1,1 @@
+fileProcessor.exe -extensions=.txt;.bat -path="\\test-shared-dir\docs\new" -output=me.txt
