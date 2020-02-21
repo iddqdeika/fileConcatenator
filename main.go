@@ -32,7 +32,7 @@ func main() {
 			if len(val) > 0 {
 				out = val
 			} else {
-				fmt.Printf("not null output filename must be set by output= arg")
+				fmt.Printf("not null output filename must be set by output= arg\r\n")
 			}
 		}
 		if strings.HasPrefix(arg, pathPrefix) {
@@ -52,6 +52,6 @@ func main() {
 
 	core.
 		NewRecursiveProcessor().
-		WithHandler(core.ExtensionListValidator(extensions), core.FileConcatenator(out)).
+		WithHandler(core.ExtensionListValidator(extensions), core.FileConcatenatorHandler(out)).
 		ProcessPath(path)
 }

@@ -1,1 +1,1 @@
-fileProcessor.exe -extensions=.go -path="C:\Users\User\go\src\fileProcessor" -output=me.txt
+fileProcessor.exe -extensions=.go;.txt -path="C:\Users\User\go\src\fileProcessor" -output=me.txt

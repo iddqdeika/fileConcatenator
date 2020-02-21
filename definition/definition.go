@@ -1,6 +1,6 @@
 package definition
 
-type Validator func(path string) (ok bool)
+type Validator func(path string, isDir bool) (ok bool)
 
 type Handler func(path string)
 

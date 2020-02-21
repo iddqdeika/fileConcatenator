@@ -10,17 +10,17 @@ import (
 
 var filesCreated = make(map[string]struct{})
 
-func FileConcatenator(outputFileName string) definition.Handler {
+func FileConcatenatorHandler(outputFileName string) definition.Handler {
 	return func(path string) {
 		data, err := ioutil.ReadFile(path)
 		if err != nil {
-			fmt.Printf("cant read file %v, err: %v", path, err)
+			fmt.Printf("cant read file %v, err: %v\r\n", path, err)
 			return
 		}
 		fname := path[strings.LastIndex(path, string(os.PathSeparator)):]
 		err = appendFile(outputFileName, fname, data)
 		if err != nil {
-			fmt.Printf("cant write to file %v, err: %v", outputFileName, err)
+			fmt.Printf("cant write to file %v, err: %v\r\n", outputFileName, err)
 			return
 		}
 	}

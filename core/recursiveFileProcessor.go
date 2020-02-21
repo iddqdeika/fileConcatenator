@@ -52,13 +52,13 @@ func (p *recursiveProcessor) process(path string) error {
 			p.process(path + string(os.PathSeparator) + name)
 		}
 	}
-	p.dispatch(path)
+	p.dispatch(path, s.IsDir())
 	return nil
 }
 
-func (p *recursiveProcessor) dispatch(path string) {
+func (p *recursiveProcessor) dispatch(path string, isDir bool) {
 	for _, d := range p.dispatchers {
-		if d.validate(path) {
+		if d.validate(path, isDir) {
 			d.handle(path)
 		}
 	}
