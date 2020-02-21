@@ -1,1 +1,1 @@
-fileProcessor.exe -extensions=.txt;.bat -path="\\test-shared-dir\docs\new" -output=me.txt
+fileProcessor.exe -extensions=.go -path="C:\Users\User\go\src\fileProcessor" -output=me.txt

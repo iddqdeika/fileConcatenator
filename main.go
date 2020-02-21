@@ -14,7 +14,10 @@ const pathPrefix = "-path="
 
 func main() {
 	sc := bufio.NewScanner(os.Stdin)
-	defer sc.Scan()
+	defer func() {
+		fmt.Printf("Finished...\r\n")
+		sc.Scan()
+	}()
 
 	out := "concat_out.txt"
 	var extensions []string
