@@ -1,7 +1,7 @@
 package core
 
 import (
-	"fileProcessor/definition"
+	"fileConcatenator/definition"
 	"strings"
 )
 

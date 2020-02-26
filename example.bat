@@ -1,1 +1,1 @@
-fileProcessor.exe -extensions=.go;.txt -path="C:\Users\User\go\src\fileProcessor" -output=me.txt
+fileConcatenator.exe -extensions=.go;.txt -path="C:\Users\bolshakov\GolandProjects\src\fileConcatenator" -output=me.txt

@@ -2,7 +2,7 @@ package main
 
 import (
 	"bufio"
-	"fileProcessor/core"
+	"fileConcatenator/core"
 	"fmt"
 	"os"
 	"strings"
@@ -49,9 +49,16 @@ func main() {
 		fmt.Printf("must be program argument %v defined...", extensionsArgPrefix)
 		return
 	}
+	if strings.LastIndex(out, ".") < 0 {
+		fmt.Printf("must be extension \".ext\" set in output file...")
+		return
+	}
 
-	core.
+	err := core.
 		NewRecursiveProcessor().
 		WithHandler(core.ExtensionListValidator(extensions), core.FileConcatenatorHandler(out)).
 		ProcessPath(path)
+	if err != nil {
+		fmt.Printf("error occured during execution: %v\r\n", err)
+	}
 }
